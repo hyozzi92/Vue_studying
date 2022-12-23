@@ -12,15 +12,15 @@
     <a v-for="(a, i) in menu" :key="i">{{ a }}</a>
   </div>
   <div v-for="(a, i) in products" :key="i">
-    <img :src="imgName[i]" class="room-img" />
-    <h4 @click="modalStatus = true">{{ a }}</h4>
-    <p>{{ price1[i] }}만원</p>
-    <button @click="increase(i)">허위매물신고</button>
-    <span>신고수 : {{ biolateNumber[i] }}</span>
+    <img :src="data[i].image" class="room-img" />
+    <h4>{{ data[i].title }}</h4>
+    <p>{{ data[i].price }}원</p>
   </div>
 </template>
 
 <script>
+import data from "./data.js";
+
 export default {
   name: "App",
   data() {
@@ -35,6 +35,7 @@ export default {
         require("./assets/room1.jpg"),
         require("./assets/room2.jpg"),
       ],
+      data: data,
     };
   },
   methods: {
