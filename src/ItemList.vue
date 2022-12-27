@@ -11,6 +11,7 @@
 </template>
 
 <script>
+console.log('하이')
 export default {
   name: "ItemList",
   props: {
