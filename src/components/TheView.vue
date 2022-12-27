@@ -62,7 +62,7 @@ export default {
 
 }
 </script>
-console.log('ggg')
+
 <style scoped>
 
 </style>
