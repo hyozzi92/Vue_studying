@@ -56,12 +56,13 @@ export default {
 
 
 
+
     return {post, posts, createPost, username };
   }
 
 }
 </script>
-
+console.log('ggg')
 <style scoped>
 
 </style>
