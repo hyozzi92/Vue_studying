@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
 <Modal @closeModal="modalStatus=false" :data="data" :statesNumber="statesNumber" :modalStatus="modalStatus"/>
 
@@ -62,3 +63,19 @@ div {
 
 
 </style>
+=======
+// src/components/TheNav.vue
+// src/App.vue
+<script setup>
+import TheNav from './components/TheNav.vue';
+import TheView from './components/TheView.vue';
+</script>
+
+<template>
+  <TheNav></TheNav>
+
+  <TheView></TheView>
+  <AppCard></AppCard>
+
+</template>
+>>>>>>> 4bee2cbc26b554eaa131074a05f9d195c211f469

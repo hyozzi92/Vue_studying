@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "budongsan",
+=======
+  "name": "studying_for_vue",
+>>>>>>> 4bee2cbc26b554eaa131074a05f9d195c211f469
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +12,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
+=======
+    "bootstrap": "^5.2.3",
+    "core-js": "^3.8.3",
+    "vue": "^3.2.36"
+>>>>>>> 4bee2cbc26b554eaa131074a05f9d195c211f469
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
