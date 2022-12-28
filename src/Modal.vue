@@ -3,10 +3,10 @@
     <div class="white-bg">
       <img class="modalImg" :src="data[statesNumber].image" />
       <h4>{{ data[statesNumber].title }}</h4>
-      <p>{{ data[statesNumber].price }}원</p>
-
+            <input v-model="month"/>
+      <p>{{month}}개월 선택함 : {{ data[statesNumber].price * month }}원</p>
       <span> {{data[statesNumber].content}}</span>
-      <Discount/>
+
       <button @click="$emit('closeModal')">닫기</button>
 
     </div>
@@ -15,8 +15,24 @@
 </template>
 
 <script>
+
 export default {
   name: "TheModal.vue",
+  data(){
+    return {
+      month : 1,
+
+    }
+  },
+  watch : {
+    month(a){
+      const pattern = /\s/g;
+      if (isNaN(a) ==true && pattern) {
+        alert('숫자만 입력해주세요');
+       this.month = 1
+      }
+    }
+  },
   props : {
     data : Object,
     statesNumber: Number,

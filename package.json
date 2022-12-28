@@ -1,7 +1,7 @@
 {
 
   "name": "budongsan",
-=======
+
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,8 +12,6 @@
   "dependencies": {
 
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
-
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
     "vue": "^3.2.36"

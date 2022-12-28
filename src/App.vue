@@ -1,12 +1,16 @@
-<<<<<<< HEAD
-<template>
-<Modal @closeModal="modalStatus=false" :data="data" :statesNumber="statesNumber" :modalStatus="modalStatus"/>
 
+<template>
+
+  <transition name="fade">
+<Modal @closeModal="modalStatus=false" :data="data" :statesNumber="statesNumber" :modalStatus="modalStatus"/>
+  </transition>
   <div class="menu">
     <a v-for="(a, i) in menu" :key="i">{{ a }}</a>
   </div>
 
-  <Discount/>
+  <Discount />
+  <button @click="priceSort">가격순 정렬</button>
+  <button @click="sortBack">되돌리기</button>
 
   <ItemList @openModal="modalStatus=true; statesNumber = $event" :modalStatus="modalStatus" :statesNumber="statesNumber" :data="data" :products="products" />
 
@@ -23,6 +27,8 @@ export default {
   name: "App",
   data() {
     return {
+      showDiscount : true,
+      originalData : [...data],
       statesNumber: 0,
       modalStatus: false,
       biolateNumber: [0, 0, 0, 0],
@@ -32,11 +38,20 @@ export default {
       data: data,
     };
   },
+
+  mounted(){
+
+  },
   methods: {
     increase(i) {
       this.biolateNumber[i]++;
     },
-    modalHandler() {},
+    priceSort(){
+      this.data.sort((a,b)=>{return  b.price - a.price })
+    },
+    sortBack(){
+      this.data = [...this.originalData]
+    }
   },
   components: {ItemList, Discount, Modal},
 };
@@ -59,23 +74,17 @@ div {
   color: white;
   padding: 10px;
 }
-
-
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all 1s;
+}
+.fade-enter-to{
+  opacity: 1;
+}
 
 </style>
-=======
-// src/components/TheNav.vue
-// src/App.vue
-<script setup>
-import TheNav from './components/TheNav.vue';
-import TheView from './components/TheView.vue';
-</script>
 
-<template>
-  <TheNav></TheNav>
 
-  <TheView></TheView>
-  <AppCard></AppCard>
 
-</template>
->>>>>>> 4bee2cbc26b554eaa131074a05f9d195c211f469
